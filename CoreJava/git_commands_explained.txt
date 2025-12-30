@@ -1,0 +1,195 @@
+
+GIT COMMANDS – DETAILED EXPLANATION
+=================================
+
+WHAT IS GIT?
+------------
+Git is a distributed version control system.
+It helps you track changes in files, work with teams, and manage code history.
+
+---------------------------------
+BASIC COMMANDS (DAY-TO-DAY USE)
+---------------------------------
+
+1. git --version
+   Shows the installed Git version.
+   Used to verify Git is installed correctly.
+
+2. git clone <repo-url>
+   Downloads a remote repository from GitHub/GitLab to your local system.
+   Example:
+   git clone https://github.com/user/project.git
+
+3. git status
+   Shows:
+   - Current branch
+   - Modified files
+   - Staged files
+   - Untracked files
+   Most frequently used command.
+
+4. git add file.java
+   Adds a specific file to the staging area.
+   Git now starts tracking changes for commit.
+
+5. git add .
+   Adds ALL modified and new files to the staging area.
+
+6. git commit -m "message"
+   Saves staged changes permanently in Git history.
+   Message should describe what you changed.
+
+7. git push origin main
+   Uploads local commits to the remote repository (GitHub).
+   origin = remote name
+   main = branch name
+
+8. git pull origin main
+   Fetches latest changes from remote and merges them into local branch.
+
+---------------------------------
+BRANCHING COMMANDS
+---------------------------------
+
+9. git branch
+   Lists all local branches.
+   Current branch is marked with *.
+
+10. git branch branch-name
+    Creates a new branch.
+    Does NOT switch to it.
+
+11. git checkout branch-name
+    Switches to an existing branch.
+
+12. git checkout -b branch-name
+    Creates a new branch AND switches to it.
+
+13. git branch -d branch-name
+    Deletes a branch safely (only if merged).
+
+---------------------------------
+VIEW HISTORY
+---------------------------------
+
+14. git log
+    Shows full commit history with:
+    - Commit ID
+    - Author
+    - Date
+    - Message
+
+15. git log --oneline
+    Shows compact commit history (one line per commit).
+
+16. git show
+    Shows details of the latest commit.
+
+---------------------------------
+REMOTE REPOSITORY
+---------------------------------
+
+17. git remote -v
+    Shows remote repository URLs (fetch & push).
+
+18. git remote add origin <repo-url>
+    Connects local repository to remote repository.
+
+19. git remote set-url origin <new-url>
+    Changes remote repository URL.
+
+---------------------------------
+UNDO / FIX MISTAKES
+---------------------------------
+
+20. git reset file.java
+    Removes file from staging area (keeps changes).
+
+21. git reset
+    Unstages all files.
+
+22. git checkout -- file.java
+    Discards local changes in the file.
+    File resets to last committed state.
+
+23. git commit --amend
+    Modifies the last commit (message or files).
+    Useful if you forgot to add a file.
+
+---------------------------------
+STASH COMMANDS
+---------------------------------
+
+24. git stash
+    Temporarily saves uncommitted changes.
+
+25. git stash list
+    Shows all stashed changes.
+
+26. git stash pop
+    Applies the last stash and removes it from stash list.
+
+---------------------------------
+TAGS (VERSIONING)
+---------------------------------
+
+27. git tag v1.0
+    Creates a version tag.
+
+28. git push origin v1.0
+    Pushes tag to remote repository.
+
+---------------------------------
+CONFIGURATION
+---------------------------------
+
+29. git config --global user.name "Your Name"
+    Sets your Git username globally.
+
+30. git config --global user.email "email@example.com"
+    Sets your Git email globally.
+
+---------------------------------
+COMMON WORKFLOW (MOST IMPORTANT)
+---------------------------------
+
+git status
+Check changes
+
+git add .
+Stage changes
+
+git commit -m "message"
+Save changes
+
+git pull origin main
+Sync with remote
+
+git push origin main
+Upload changes
+
+---------------------------------
+INTERVIEW NOTES
+---------------------------------
+
+• git pull = git fetch + git merge
+• Staging area = area between working directory and commit
+• git stash = save work temporarily without commit
+• Git vs GitHub:
+  Git = tool
+  GitHub = hosting service
+
+---------------------------------
+SUGGESTED PROJECT STRUCTURE
+---------------------------------
+
+JavaFullStackJourney/
+ ├── CoreJava/
+ ├── DSA/
+ ├── SQL/
+ ├── SpringBoot/
+ └── Projects/
+
+---------------------------------
+END OF FILE
+---------------------------------
